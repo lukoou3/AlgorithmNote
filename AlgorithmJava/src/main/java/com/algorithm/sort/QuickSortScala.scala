@@ -24,6 +24,8 @@ object QuickSortScala {
     var index = pivot + 1
     var i = index
 
+    // index左边的元素都小于arr(pivot)
+    // 把小于arr(pivot)的元素都移动到左边
     while(i <= right){
       if (arr(i) < arr(pivot)) {
         swap(arr, i, index)
@@ -43,6 +45,13 @@ object QuickSortScala {
   }
 
   def main(args: Array[String]): Unit = {
+    var array = Array(5, 6, 3, 0, 2, 10, 8, 2, 7, 5)
+    val position = partition(array, 0, array.length - 1)
+    println(position)
+    println(array.mkString(","))
+  }
+
+  def main1(args: Array[String]): Unit = {
     val array1 = Array(0, 5, 3, 2, 2, 10, 8, 6, 7, 6)
     val array2 = Array(2, -5, -45, -2, 5, 5, -10, -5, -4)
     quickSort(array1, 0, array1.length - 1)
